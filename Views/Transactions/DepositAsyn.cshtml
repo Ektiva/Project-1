@@ -1,0 +1,41 @@
+﻿
+@model EktivaBankNetApp.Models.ViewModel.Transaction
+
+@{
+    ViewData["Title"] = "DepositAsyn";
+}
+
+<h5 style="font-weight: bold; color:crimson">Make a Deposit</h5>
+<hr style="margin-top:-10px; border-color:black" />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DepositAsyn">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="AccToId" class="control-label">Account To</label>
+                <select asp-for="AccToId" class="form-control" asp-items="ViewBag.Accounts"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="transactionDate" class="control-label"></label>
+                <input asp-for="transactionDate" class="form-control" />
+                <span asp-validation-for="transactionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a style="color:darkgreen" asp-controller="Customers" asp-action="CustomerWelcome">Return to Menu</a>
+</div>
+

@@ -1,0 +1,39 @@
+﻿@model EktivaBankNetApp.Models.ViewModel.TransactionRange
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h5 style="font-weight: bold; color:crimson">Get a Range Transaction</h5>
+<hr style="margin-top:-10px; border-color:black" />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GetRangeTrans">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AccountNumber" class="control-label"></label>
+                <input asp-for="AccountNumber" class="form-control" />
+                <span asp-validation-for="AccountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="transactionFrom" class="control-label"></label>
+                <input asp-for="transactionFrom" class="form-control" />
+                <span asp-validation-for="transactionFrom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="transactionTo" class="control-label"></label>
+                <input asp-for="transactionTo" class="form-control" />
+                <span asp-validation-for="transactionTo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr style="margin-top:-10px; border-color:black" />
+<div>
+    <a style="color:darkgreen" asp-controller="Accounts" asp-action="Index">Back to List</a>
+</div>
+

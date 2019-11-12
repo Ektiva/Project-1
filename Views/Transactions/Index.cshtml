@@ -1,0 +1,86 @@
+﻿@model IEnumerable<EktivaBankNetApp.Models.ViewModel.Transaction>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div>
+    <a style="color:darkgreen" asp-controller="Customers" asp-action="CustomerWelcome">Return to Menu</a>
+</div>
+<h5 style="font-weight: bold; color:crimson">My Transactions</h5>
+<hr style="margin-top:-10px; border-color:black" />
+<div>
+    <table class="table" style="border: 1px solid black;">
+    <thead style="border: 2px solid black;">
+        <tr style="border: 2px solid black;">
+            <th style="border: 2px solid black;">
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+
+            <th style="border: 2px solid black;">
+                @Html.DisplayNameFor(model => model.AccFromId)
+            </th>
+
+            <th style="border: 2px solid black;">
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+
+            <th style="border: 2px solid black;">
+                @Html.DisplayNameFor(model => model.BalBefore)
+            </th>
+
+            <th style="border: 2px solid black;">
+                @Html.DisplayNameFor(model => model.BalAfter)
+            </th>
+
+            <th style="border: 2px solid black;">
+                @Html.DisplayNameFor(model => model.transactionDate)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody style="border: 1px dashed black;">
+        @foreach (var item in Model)
+        {
+            <tr style="border: 1px dashed black;">
+
+                <td style="border: 1px dashed black;">
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+
+                <td style="border: 1px dashed black;">
+                    @if (item.AccFromId == 0)
+                    {
+                        @Html.DisplayFor(modelItem => item.AccToId)
+                    }
+                    @if (item.AccToId == 0)
+                    {
+                        @Html.DisplayFor(modelItem => item.AccFromId)
+                    }
+                </td>
+
+                <td style="border: 1px dashed black;">
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+
+                <td style="border: 1px dashed black;">
+                    @Html.DisplayFor(modelItem => item.BalBefore)
+                </td>
+
+                <td style="border: 1px dashed black;">
+                    @Html.DisplayFor(modelItem => item.BalAfter)
+                </td>
+
+                <td style="border: 1px dashed black;">
+                    @Html.DisplayFor(modelItem => item.transactionDate)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+<div>
+    <a style="color:darkgreen" asp-controller="Customers" asp-action="CustomerWelcome">Return to Menu</a>
+</div>
+<hr style="border-color:black" />
+<hr style="border-color:black" />

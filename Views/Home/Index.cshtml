@@ -1,0 +1,42 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div>
+    <div>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <div align="center">
+                @{
+                    <button style="display: inline-block; font-size: 24px; cursor: pointer; text-align: center; text-decoration: none;outline: none; color: #fff; background-color: #4CAF50; border: none; border-radius: 15px; box-shadow: 0 9px #999;" type="button" 
+                            onclick="location.href = '@Url.Action("CustomerWelcome", "Customers")'">--  BEGIN  --</button>
+                }
+            </div>
+        }
+        else
+        {
+            <div align="center">
+                <h2 style="color: red; text-align: center; font-size: 22px;">
+                -- Please sign in or register  --  </h2>
+            </div>
+        }
+        <hr style="border-color: black" />
+    </div>
+
+    <div class="CustomerInfo">
+        <div style="  background-color: lightgoldenrodyellow; padding: 20px; color: black/*#ffffff*/; text-align: center; font-size: 14px;
+                       box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 1px 1px rgba(0,0,0,0.24);border: 1px solid;box-shadow: 5px 10px;">
+            <h4>Who is EBA?</h4>
+            <p>Ektiva Bank Application is Net Banking Application</p>
+            <h4>Why choose EBA?</h4>
+            <p>Best interest rate ever in the market</p>
+            <h4>Who trust Us?</h4>
+            <p>Revature, Amazon, Saafi-us, Bank Of America amd so on</p>
+        </div>      
+    </div>
+
+</div>

@@ -1,0 +1,35 @@
+﻿@model EktivaBankNetApp.Models.Account
+
+@{
+    ViewData["Title"] = "CreateChecking1";
+}
+<h5 style="font-weight: bold; color:crimson">Open New Checking Account</h5>
+<hr style="margin-top:-10px; border-color:black" />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateChecking1">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Balance" class="control-label">Initial Balance</label>
+                <input asp-for="Balance" class="form-control" />
+                <span asp-validation-for="Balance" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="openDate" class="control-label"></label>
+                <input asp-for="openDate" class="form-control" />
+                <span asp-validation-for="openDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a style="color:darkgreen" asp-controller="Customers" asp-action="CustomerWelcome">Return to Menu</a>
+</div>
+

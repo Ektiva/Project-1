@@ -1,0 +1,57 @@
+﻿@model EktivaBankNetApp.Models.Account
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<a style="color:darkgreen" asp-action="Index">Back to List</a>
+
+<h5 style="font-weight: bold; color:crimson"> Account Details</h5>
+<hr style="margin-top:-10px; border-color:black" />
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccountNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.AccountType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.AccountType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.yearTerm)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.yearTerm)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.openDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.openDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.interestRate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.interestRate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a style="color:mediumblue" asp-controller="Transactions" asp-action="GetAll" asp-route-id="@Model.AccountNumber">All Transactions</a> |
+    <a style="color:mediumblue" asp-controller="Transactions" asp-action="GetLasts" asp-route-id="@Model.AccountNumber">Last 10 Transactions</a> |
+    <a style="color:mediumblue" asp-controller="TransactionRanges" asp-action="GetRangeTrans" asp-route-id="@Model.AccountNumber">Range Transactions</a>
+
+</div>

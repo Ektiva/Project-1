@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EktivaBankNetApp", "EktivaBankNetApp.csproj", "{F4361A99-6548-442F-A777-747ECFE18D64}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project0-EktivaBankApp", "..\..\..\..\Documents\MyProjects\VS_FirstProject\FirstProject\Project0-EktivaBankApp\Project0-EktivaBankApp.csproj", "{C2137F90-60FB-4D61-B5A6-C7B32CB79DF7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4361A99-6548-442F-A777-747ECFE18D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4361A99-6548-442F-A777-747ECFE18D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4361A99-6548-442F-A777-747ECFE18D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4361A99-6548-442F-A777-747ECFE18D64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2137F90-60FB-4D61-B5A6-C7B32CB79DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2137F90-60FB-4D61-B5A6-C7B32CB79DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2137F90-60FB-4D61-B5A6-C7B32CB79DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2137F90-60FB-4D61-B5A6-C7B32CB79DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A3D5690-4B34-4177-8E7D-B77DB6F8F3E7}
+	EndGlobalSection
+EndGlobal

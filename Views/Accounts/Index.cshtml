@@ -1,0 +1,71 @@
+﻿@model IEnumerable<EktivaBankNetApp.Models.Account>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<p>
+    <a style="color:darkgreen" asp-controller="Customers" asp-action="CustomerWelcome">Return to Menu</a>
+</p>
+<h5 style="font-weight: bold; color:crimson">My Accounts</h5>
+<hr style="margin-top:-10px; border-color:black" />
+
+<div style=" overflow-y:auto; ">
+    <table class="table" style="border: 1px solid black;">
+        <thead style="border: 1px solid black;">
+            <tr style="border: 1px solid black;">
+                <th style="border: 2px solid black;">
+                    @Html.DisplayNameFor(model => model.AccountNumber)
+                </th>
+                <th style="border: 2px solid black;">
+                    @Html.DisplayNameFor(model => model.AccountType)
+                </th>
+                <th style="border: 2px solid black;">
+                    @Html.DisplayNameFor(model => model.Balance)
+                </th>
+                <th style="border: 2px solid black;">
+                    @Html.DisplayNameFor(model => model.yearTerm)
+                </th>
+                <th style="border: 2px solid black;">
+                    @Html.DisplayNameFor(model => model.openDate)
+                </th>
+                <th style="border: 2px solid black;">
+                    @Html.DisplayNameFor(model => model.interestRate)
+                </th>
+                <th style="border: 2px solid black;"> Action</th>
+            </tr>
+        </thead>
+        <tbody style="border: 1px solid black;">
+            @foreach (var item in Model)
+            {
+                <tr style="border: 1px solid black;">
+                    <td style="border: 1px solid black;">
+                        @Html.DisplayFor(modelItem => item.AccountNumber)
+                    </td>
+                    <td style="border: 1px solid black;">
+                        @Html.DisplayFor(modelItem => item.AccountType)
+                    </td>
+                    <td style="border: 1px solid black;">
+                        @Html.DisplayFor(modelItem => item.Balance)
+                    </td>
+                    <td style="border: 1px solid black;">
+                        @Html.DisplayFor(modelItem => item.yearTerm)
+                    </td>
+                    <td style="border: 1px solid black;">
+                        @Html.DisplayFor(modelItem => item.openDate)
+                    </td>
+                    <td style="border: 1px solid black;">
+                        @Html.DisplayFor(modelItem => item.interestRate)
+                    </td>
+                    <td style="border: 1px solid black;">
+                        @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |*@
+                        <a style="color:dodgerblue;" asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a style="color:red;" asp-action="Delete" asp-route-id="@item.Id">Close</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<hr style="border-color:black" />
+@*<hr style="border-color:black" />*@
+
